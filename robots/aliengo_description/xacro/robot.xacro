@@ -6,6 +6,15 @@
     <xacro:include filename="$(find aliengo_description)/xacro/materials.xacro"/>
     <xacro:include filename="$(find aliengo_description)/xacro/leg.xacro"/>
     <xacro:include filename="$(find aliengo_description)/xacro/gazebo.xacro"/>
+    <xacro:include filename="$(find aliengo_description)/xacro/depthCamera.xacro"/>
+
+    <xacro:depthCamera camID="1" name="face">
+        <origin rpy="0 ${PI/9} 0" xyz="0.35 0.0 0.15"/>
+    </xacro:depthCamera>
+
+        <xacro:depthCamera camID="2" name="rear">
+        <origin rpy="0 ${PI/18} ${PI}" xyz="-0.45 0.0 0.15"/>
+    </xacro:depthCamera>
 
     <!-- Rotor related joint and link is only for demonstrate location. -->
     <!-- Actually, the rotor will rotate and the joint is not fixed. Reduction ratio should be considered. -->
