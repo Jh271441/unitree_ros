@@ -1,0 +1,31 @@
+<launch>
+    <arg name="rname" default="aliengo"/>
+    <!-- 将 robot_path 设置为可选 -->
+    <arg name="robot_path" default="(find $(arg rname)_description)"/>
+    <arg name="dollar" value="$"/>
+    <arg name="wname" default="willowgarage"/>
+    <arg name="paused" default="true"/>
+    <arg name="use_sim_time" default="true"/>
+    <arg name="gui" default="true"/>
+    <arg name="headless" default="false"/>
+    <arg name="debug" default="false"/>
+    <arg name="user_debug" default="false"/>
+
+    <include file="$(find unitree_gazebo)/launch/spwan_robot.launch">
+        <arg name="rname" value="$(arg rname)"/>
+        <arg name="robot_path" value="$(arg robot_path)"/>  <!-- 只保留这一行传递 robot_path -->
+        <arg name="dollar" value="$(arg dollar)"/>
+        <arg name="wname" value="$(arg wname)"/>
+        <arg name="paused" value="$(arg paused)"/>
+        <arg name="use_sim_time" value="$(arg use_sim_time)"/>
+        <arg name="gui" value="$(arg gui)"/>
+        <arg name="headless" value="$(arg headless)"/>
+        <arg name="debug" value="$(arg debug)"/>
+        <arg name="user_debug" value="$(arg user_debug)"/>
+    </include>
+
+    <include file="$(find lqc-unitree-gazebo)/launch/lqc-unitree-gazebo.launch">
+        <arg name="policy_dir" value="/home/cjh/workspaces/unitree_workspaces/AlQRCStrictStairsRew"/>
+        <arg name="ns" value="$(arg rname)"/>
+    </include>
+</launch>

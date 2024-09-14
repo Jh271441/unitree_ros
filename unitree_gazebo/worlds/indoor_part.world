@@ -1,0 +1,18 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <world name="default">
+    <include>
+      <uri>model://sun</uri>
+    </include>
+    <include>
+      <uri>model:///home/cjh/workspaces/lite_ws/src/unitree_ros/unitree_gazebo/worlds/building_editor_models/indoor_part</uri>
+      <pose>0 0 0 0 0 0</pose>
+    </include>
+        <!-- A ground plane -->
+    <include>
+        <uri>model://ground_plane</uri>
+        <pose>0 0 -0.01 0 0 0</pose>
+    </include>
+    <plugin name="ros_interface_plugin" filename="librotors_gazebo_ros_interface_plugin.so"/>
+  </world>
+</sdf>
