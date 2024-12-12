@@ -8,6 +8,10 @@
     <arg name="gui" default="true"/>
     <arg name="headless" default="false"/>
     <arg name="debug" default="false"/>
+    <arg name="x" default="29.0"/>
+    <arg name="y" default="-7.59"/>
+    <arg name="z" default="1.6"/>
+    <arg name="Y" default="1.57"/> 
 
     <!-- Debug mode will hung up the robot, use "true" or "false" to switch it. -->
     <arg name="user_debug" default="false"/>
@@ -33,7 +37,7 @@
     <!-- Run a python script to the send a service call to gazebo_ros to spawn a URDF robot -->
     <!-- Set trunk and joint positions at startup -->
     <node pkg="gazebo_ros" type="spawn_model" name="urdf_spawner" respawn="false" output="screen"
-          args="-urdf -x 29.0 -y -7.59 -z 1.6 -Y 1.57 -model $(arg rname)_gazebo -param robot_description -unpause"/>
+          args="-urdf -x $(arg x) -y $(arg y) -z $(arg z) -Y $(arg Y) -model $(arg rname)_gazebo -param robot_description -unpause"/>
 
     <!-- Load joint controller configurations from YAML file to parameter server -->
     <rosparam file="$(arg dollar)$(arg robot_path)/config/robot_control.yaml" command="load"/>

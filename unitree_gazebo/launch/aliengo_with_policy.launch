@@ -10,6 +10,10 @@
     <arg name="headless" default="false"/>
     <arg name="debug" default="false"/>
     <arg name="user_debug" default="false"/>
+    <arg name="x" default="29.0"/>
+    <arg name="y" default="-7.59"/>
+    <arg name="z" default="1.6"/>
+    <arg name="Y" default="1.57"/> 
 
     <include file="$(find unitree_gazebo)/launch/spwan_robot.launch">
         <arg name="rname" value="$(arg rname)"/>
@@ -22,6 +26,10 @@
         <arg name="headless" value="$(arg headless)"/>
         <arg name="debug" value="$(arg debug)"/>
         <arg name="user_debug" value="$(arg user_debug)"/>
+        <arg name="x" value="$(arg x)"/>
+        <arg name="y" value="$(arg y)"/>
+        <arg name="z" value="$(arg z)"/>
+        <arg name="Y" value="$(arg Y)"/>
     </include>
 
     <include file="$(find lqc-unitree-gazebo)/launch/lqc-unitree-gazebo.launch">

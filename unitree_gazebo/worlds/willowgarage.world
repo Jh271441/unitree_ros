@@ -5,7 +5,8 @@
       <uri>model://sun</uri>
     </include>
     <include>
-      <uri>model://willowgarage</uri>
+      <uri>model:///home/cjh/workspaces/lite_ws/src/unitree_ros/unitree_gazebo/worlds/building_editor_models/willow_garage</uri>
+      <pose>0 0 0.97 0 0 0</pose>
     </include>
         <!-- A ground plane -->
     <include>
